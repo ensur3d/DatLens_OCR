@@ -18,7 +18,7 @@ matters lives on your Ollama server.
 
 ## Quick start
 
-### Docker (recommended)
+### Docker (optional)
 
 ```bash
 docker build -t datlens-ocr-ollama .
@@ -34,7 +34,7 @@ up when jobs finish (mount a volume there if you want crash forensics).
 Skip LibreOffice in the image if you never send DOCX/HTML to the app:
 `docker build --build-arg WITH_LIBREOFFICE=0 -t datlens-ocr-ollama .`
 
-### Docker Compose
+### Docker Compose (recommended)
 
 Same steps on Windows, macOS and Linux — all you need is [Docker Desktop](https://www.docker.com/products/docker-desktop/) (Windows/macOS) or the [Docker Engine + Compose plugin](https://docs.docker.com/compose/install/) (Linux). Nothing else to install:
 
