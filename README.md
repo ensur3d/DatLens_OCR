@@ -1,5 +1,8 @@
 # DatLens_OCR — Ollama Edition
 
+<img width="1295" height="808" alt="Screenshot from 2026-10-23 21-48-26" src="https://github.com/user-attachments/assets/40737f81-2df9-4e02-a691-0fdbfb05923e" />
+<img width="1291" height="809" alt="Screenshot from 2026-10-23 21-48-42" src="https://github.com/user-attachments/assets/49fde338-20b1-415c-9d09-eb9dbce535f5" />
+
 A modern web app for document OCR. Upload PDF / DOCX / HTML / images (or paste a
 public URL) and get **Markdown, HTML, JSON or plain text** out — with live
 per-page progress in the browser. Dark theme by default, light theme on toggle.
