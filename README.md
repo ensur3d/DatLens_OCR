@@ -18,12 +18,29 @@ matters lives on your Ollama server.
 
 ## Quick start
 
-### Docker (optional)
+
+
+### Docker Compose (recommended)
+
+Same steps on Windows, macOS and Linux — all you need is [Docker Desktop](https://www.docker.com/products/docker-desktop/) (Windows/macOS) or the [Docker Engine + Compose plugin](https://docs.docker.com/compose/install/) (Linux). Nothing else to install:
 
 ```bash
+git clone https://github.com/ensur3d/DatLens_OCR.git
+cd DatLens_OCR
+docker compose up -d --build
+# → open http://127.0.0.1:8901
+```
+
+Ollama is **not** part of this stack — in the UI, point the Ollama panel at your remote server (e.g. `http://192.168.x.x:11434`) and pick a vision-capable model.
+
+### Docker Build (optional)
+
+```bash
+git clone https://github.com/ensur3d/DatLens_OCR.git
+cd DatLens_OCR
 docker build -t datlens-ocr-ollama .
 docker run -d --name datlens -p 8901:8901 datlens-ocr-ollama
-# → open http://localhost:8901
+# → open http://127.0.0.1:8901
 ```
 
 The container needs network reachability to your Ollama server (same LAN, or a
@@ -34,16 +51,6 @@ up when jobs finish (mount a volume there if you want crash forensics).
 Skip LibreOffice in the image if you never send DOCX/HTML to the app:
 `docker build --build-arg WITH_LIBREOFFICE=0 -t datlens-ocr-ollama .`
 
-### Docker Compose (recommended)
-
-Same steps on Windows, macOS and Linux — all you need is [Docker Desktop](https://www.docker.com/products/docker-desktop/) (Windows/macOS) or the [Docker Engine + Compose plugin](https://docs.docker.com/compose/install/) (Linux). Nothing else to install:
-
-```bash
-docker compose up -d --build
-# → open http://localhost:8901
-```
-
-Ollama is **not** part of this stack — in the UI, point the Ollama panel at your remote server (e.g. `http://192.168.x.x:11434`) and pick a vision-capable model.
 
 | Task | Command |
 |------|---------|
@@ -58,6 +65,8 @@ Ollama is **not** part of this stack — in the UI, point the Ollama panel at yo
 ### Bare metal
 
 ```bash
+git clone https://github.com/ensur3d/DatLens_OCR.git
+cd DatLens_OCR
 ./run.sh                 # creates .venv + installs deps on first run
 # → open http://localhost:8901  (or http://<this-machine>:8901 from other devices)
 ```
